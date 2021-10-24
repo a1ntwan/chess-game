@@ -91,8 +91,8 @@ class Move:
                 self.x, self.y = two[0], two[1]
                 # During the attack on blacks delete black piece and move
                 if str(save[two][0]).islower():
-                    del b.__dict__[save[two][1]]
                     save[two], save[one] = save[one], '-'
+                    del b.__dict__[save[two][1]]
                 # During the ordinary move or castling just switch the chessboard squares
                 else:
                     save[one], save[two] = save[two], save[one]
@@ -101,8 +101,8 @@ class Move:
                 self.x, self.y = two[0], two[1]
                 # During the attack on whites delete white piece and move
                 if str(save[two][0]).isupper():
-                    del w.__dict__[save[two][1]]
                     save[two], save[one] = save[one], '-'
+                    del w.__dict__[save[two][1]]
                 # During the ordinary move or castling just switch the chessboard squares
                 else:
                     save[one], save[two] = save[two], save[one]
